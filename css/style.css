@@ -79,12 +79,18 @@ h1 {
 }
 
 #archive {
-  display: none;
+  /* Di base l'archivio è nascosto e ha già le proprietà della griglia */
+  display: none; 
   margin-top: 20px;
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+
+/* Quando JavaScript aggiunge la classe .archive-visible, diventa una griglia */
+#archive.archive-visible {
+  display: grid;
+}
+
 #archive-toggle {
   display: block;
   margin: 20px auto;
