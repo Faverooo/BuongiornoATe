@@ -108,3 +108,26 @@ function createPhotoCard(photo){
 
 // Avvio
 loadPhotos();
+// Logica per chiudere la modale
+
+// Recupera gli elementi della modale una sola volta
+const modal = document.getElementById('photo-modal');
+const modalCloseBtn = document.querySelector('.modal-close');
+
+// Funzione per chiudere la modale
+function closeModal() {
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open'); // Riattiva lo scroll del body
+}
+
+// Chiudi la modale quando si clicca sulla 'X'
+modalCloseBtn.addEventListener('click', closeModal);
+
+// Chiudi la modale anche quando si clicca sull'overlay (lo sfondo scuro)
+modal.addEventListener('click', (event) => {
+    // Controlla se il click è avvenuto direttamente sulla modale (lo sfondo)
+    // e non sull'immagine al suo interno.
+    if (event.target === modal) {
+        closeModal();
+    }
+});
