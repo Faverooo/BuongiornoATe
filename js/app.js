@@ -1,3 +1,4 @@
+// script.js
 const JSON_URL = 'photos/photos.json';
 
 async function loadPhotos() {
@@ -7,14 +8,17 @@ async function loadPhotos() {
 
         const containerToday = document.getElementById('today-photo');
         const containerArchive = document.getElementById('archive');
+        const toggleBtn = document.getElementById('archive-toggle');
 
-        const todayStr = new Date().toISOString().slice(0,10);
+        const todayStr = new Date().toISOString().slice(0, 10);
+
+        // Foto del giorno
         let todayPhoto = photos.find(p => p.date === todayStr);
-        if(!todayPhoto){
+        if (!todayPhoto) {
             todayPhoto = photos.filter(p => p.date <= todayStr).pop();
         }
 
-        if(todayPhoto){
+        if (todayPhoto) {
             const card = createPhotoCard(todayPhoto);
             card.classList.add('fade-in');
             containerToday.appendChild(card);
@@ -22,41 +26,44 @@ async function loadPhotos() {
             containerToday.textContent = 'Nessuna foto disponibile per oggi.';
         }
 
-        // Bottone mostra/nascondi archivio
-document.getElementById('archive-toggle').addEventListener('click', () => {
-    if (containerArchive.style.display === 'none' || containerArchive.style.display === '') {
-        // Prima svuota l'archivio per non duplicare
-        containerArchive.innerHTML = '';
+        // Toggle archivio
+        toggleBtn.addEventListener('click', () => {
+            if (containerArchive.style.display === 'none' || containerArchive.style.display === '') {
+                // Svuota l'archivio per non duplicare
+                containerArchive.innerHTML = '';
 
-        // Ordina le foto passate in ordine decrescente di data
-        photos
-          .filter(p => p.date < todayStr)
-          .sort((a, b) => new Date(b.date) - new Date(a.date))
-          .forEach(photo => {
-              const card = createPhotoCard(photo);
-              card.classList.add('fade-in');
-              containerArchive.appendChild(card);
-          });
+                // Ordina le foto passate in ordine decrescente di data
+                photos
+                    .filter(p => p.date < todayStr)
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .forEach(photo => {
+                        const card = createPhotoCard(photo);
+                        card.classList.add('fade-in');
+                        containerArchive.appendChild(card);
+                    });
 
-        containerArchive.style.display = 'block';
-        document.getElementById('archive-toggle').textContent = 'Nascondi Archivio';
-    } else {
+                containerArchive.style.display = 'block';
+                toggleBtn.textContent = 'Nascondi Archivio';
+            } else {
+                containerArchive.style.display = 'none';
+                toggleBtn.textContent = 'Mostra Archivio';
+            }
+        });
+
+        // ✅ Avvio: archivio nascosto e bottone coerente
         containerArchive.style.display = 'none';
-        document.getElementById('archive-toggle').textContent = 'Mostra Archivio';
-    }
-});
+        toggleBtn.textContent = 'Mostra Archivio';
 
-
-    } catch(err) {
+    } catch (err) {
         console.error('Errore nel caricamento delle foto:', err);
         document.getElementById('today-photo').textContent = 'Errore nel caricamento delle foto.';
     }
 }
 
-function createPhotoCard(photo){
+function createPhotoCard(photo) {
     const card = document.createElement('div');
     card.className = 'photo-card';
-    if(photo.special) card.classList.add('special');
+    if (photo.special) card.classList.add('special');
 
     const img = document.createElement('img');
     img.src = photo.src;
@@ -80,4 +87,5 @@ function createPhotoCard(photo){
     return card;
 }
 
+// Avvio
 loadPhotos();
