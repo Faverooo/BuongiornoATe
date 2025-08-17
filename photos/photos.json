@@ -1,45 +1,27 @@
 [
   {
+    "date": "2025-08-14",
+    "src": "img/foto1.jpeg",
+    "caption": "barista molto bella!"
+  },
+  {
     "date": "2025-08-15",
-    "src": "img/foto2.jpeg",
-    "caption": "Il giorno che tutto è cominciato"
+    "src": "img/foto2.jpg",
+    "caption": "scusascusascusa"
   },
   {
     "date": "2025-08-16",
     "src": "img/foto3.jpg",
-    "caption": "Una giornata indimenticabile"
+    "caption": "sei così bona che mi viene da mangiarti"
   },
   {
     "date": "2025-08-17",
-    "src": "img/foto1.jpg",
-    "caption": "Questa la vedrai solo quel giorno"
+    "src": "img/foto4.jpeg",
+    "caption": "Io che provo a tenerti quando stai per andare a casa!!!!"
   },
   {
-    "date": "2025-08-09",
-    "src": "img/foto2.jpeg",
-    "caption": "Il giorno che tutto è cominciato"
-  },
-  {
-    "date": "2025-08-10",
-    "src": "img/foto3.jpg",
-    "caption": "Una giornata indimenticabile"
-  },{
-    "date": "2025-08-14",
-    "src": "img/foto2.jpeg",
-    "caption": "Il giorno che tutto è cominciato"
-  },
-  {
-    "date": "2025-08-13",
-    "src": "img/foto3.jpg",
-    "caption": "Una giornata indimenticabile"
-  },{
-    "date": "2025-08-12",
-    "src": "img/foto2.jpeg",
-    "caption": "Il giorno che tutto è cominciato"
-  },
-  {
-    "date": "2025-08-11",
-    "src": "img/foto3.jpg",
-    "caption": "Una giornata indimenticabile"
+    "date": "2025-08-18",
+    "src": "img/foto5.jpg",
+    "caption": "Paradiso"
   }
 ]
