@@ -22,12 +22,6 @@ async function loadPhotos() {
             containerToday.textContent = 'Nessuna foto disponibile per oggi.';
         }
 
-        photos.filter(p => p.date < todayStr).forEach(photo => {
-            const card = createPhotoCard(photo);
-            card.classList.add('fade-in');
-            containerArchive.appendChild(card);
-        });
-
         // Bottone mostra/nascondi archivio
 document.getElementById('archive-toggle').addEventListener('click', () => {
     if (containerArchive.style.display === 'none' || containerArchive.style.display === '') {
