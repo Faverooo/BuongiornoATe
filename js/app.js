@@ -67,6 +67,15 @@ function createPhotoCard(photo){
 
     const img = document.createElement('img');
     img.src = photo.src;
+    // Aggiungi l'evento click all'immagine per aprire la modale
+    img.addEventListener('click', () => {
+        const modal = document.getElementById('photo-modal');
+        const modalImg = document.getElementById('modal-image');
+        
+        modal.style.display = 'block';
+        modalImg.src = photo.src;
+        document.body.classList.add('modal-open'); // Blocca lo scroll del body
+    });
     card.appendChild(img);
 
     const caption = document.createElement('div');
