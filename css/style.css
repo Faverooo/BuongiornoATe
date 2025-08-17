@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffeaea, #fff);
+  margin: 0;
+  padding: 20px;
+  color: #444;
+}
+
+h1 {
+  text-align: center;
+  color: #e63946;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+}
+
+.photo-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+.photo-card.special {
+  border: 3px solid #e63946;
+}
+
+.photo-card img {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.photo-title {
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-top: 12px;
+  text-align: center;
+  color: #333;
+}
+.photo-caption {
+  text-align: center;
+  margin-top: 6px;
+  font-style: italic;
+  color: #666;
+}
+.photo-date {
+  text-align: center;
+  font-size: 0.85em;
+  margin-top: 6px;
+  color: #aaa;
+}
+
+#archive {
+  display: none;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+#archive-toggle {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  background: #e63946;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#archive-toggle:hover {
+  background: #d62828;
+}
+
+.fade-in { 
+  opacity: 0; 
+  animation: fadeIn 1s forwards; 
+}
+@keyframes fadeIn { 
+  to { opacity: 1; } 
+}

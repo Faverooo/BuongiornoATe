@@ -1,0 +1,21 @@
+[
+  {
+    "date": "2025-08-15",
+    "src": "img/foto1.jpg",
+    "title": "Il nostro inizio",
+    "caption": "Il giorno che tutto è cominciato",
+    "special": true
+  },
+  {
+    "date": "2025-08-16",
+    "src": "img/foto2.jpg",
+    "title": "La gita in bici",
+    "caption": "Una giornata indimenticabile"
+  },
+  {
+    "date": "2025-08-20",
+    "src": "img/foto3.jpg",
+    "title": "Sorpresa!",
+    "caption": "Questa la vedrai solo quel giorno"
+  }
+]
