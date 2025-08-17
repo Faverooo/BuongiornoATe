@@ -79,10 +79,14 @@ function createPhotoCard(photo){
     date.textContent = photo.date;
     card.appendChild(date);
 
-    // Bottone salva immagine
+    // Container per caption + bottone
+    const captionContainer = document.createElement('div');
+    captionContainer.className = 'caption-container';
+    
+    // Caption
     const caption = document.createElement('div');
-    caption.className = 'photo-caption';
     caption.textContent = photo.caption;
+    captionContainer.appendChild(caption);
     
     // Bottone di salvataggio
     const saveBtn = document.createElement('button');
@@ -94,10 +98,11 @@ function createPhotoCard(photo){
         link.download = photo.title || 'foto';
         link.click();
     });
+    captionContainer.appendChild(saveBtn);
     
-    // Aggiungi bottone a fianco della caption
-    caption.appendChild(saveBtn);
-    card.appendChild(caption);
+    // Aggiungi tutto alla card
+    card.appendChild(captionContainer);
+
     return card;
 }
 
