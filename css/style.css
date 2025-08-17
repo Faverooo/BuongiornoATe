@@ -181,3 +181,35 @@ body.modal-open {
 @keyframes fadeIn { 
   to { opacity: 1; } 
 }
+
+@media (min-width: 768px) {
+
+    /* 1. Centra il contenuto principale e dagli una larghezza massima */
+    main {
+        max-width: 1200px; /* Il contenuto non si allargherà all'infinito */
+        margin: 0 auto;   /* Centra il blocco 'main' nella pagina */
+        padding: 2rem;
+    }
+
+    /* 2. Trasforma l'archivio in una griglia di foto */
+    #archive {
+        display: grid;
+        /* Crea colonne flessibili: ognuna larga almeno 350px.
+           Il browser ne aggiungerà quante ne entrano. */
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem; /* Aggiunge spazio tra le foto nella griglia */
+    }
+
+    /* 3. Adatta le singole card alla nuova griglia */
+    .photo-card {
+        /* Rimuoviamo la larghezza in percentuale e il margine
+           per farle adattare correttamente alla griglia. */
+        width: 100%;
+        margin: 0;
+    }
+
+    /* 4. Opzionale: Riduci un po' la dimensione del titolo */
+    h1 {
+        font-size: 2.5rem;
+    }
+}
