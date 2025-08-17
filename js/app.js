@@ -65,38 +65,22 @@ function createPhotoCard(photo){
     card.className = 'photo-card';
     if(photo.special) card.classList.add('special');
 
+    // Immagine
     const img = document.createElement('img');
     img.src = photo.src;
     card.appendChild(img);
 
-    const title = document.createElement('div');
-    title.className = 'photo-title';
-    title.textContent = photo.title;
-    card.appendChild(title);
-
+    // Didascalia
     const caption = document.createElement('div');
     caption.className = 'photo-caption';
     caption.textContent = photo.caption;
     card.appendChild(caption);
 
+    // Data
     const date = document.createElement('div');
     date.className = 'photo-date';
     date.textContent = photo.date;
     card.appendChild(date);
-
-    // Bottone salva immagine
-    const saveBtn = document.createElement('button');
-    saveBtn.textContent = '💾 Salva immagine';
-    saveBtn.className = 'save-btn';
-    
-    saveBtn.addEventListener('click', () => {
-        const link = document.createElement('a');
-        link.href = photo.src;
-        link.download = photo.title.replace(/\s+/g, '_');
-        link.click();
-    });
-
-    card.appendChild(saveBtn);
 
     return card;
 }
