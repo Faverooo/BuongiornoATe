@@ -101,6 +101,79 @@ h1 {
   background: #d62828;
 }
 
+/* Aggiungi questo codice al tuo file style.css */
+
+/* Stili per la finestra modale (l'overlay) */
+.modal {
+    display: none; /* Nascosto di default */
+    position: fixed; /* Rimane fisso durante lo scroll */
+    z-index: 1000; /* Assicura che sia sopra tutto il resto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Abilita lo scroll se l'immagine è troppo grande */
+    background-color: rgba(0, 0, 0, 0.85); /* Sfondo nero semi-trasparente */
+    -webkit-backdrop-filter: blur(5px); /* Effetto blur per browser Safari */
+    backdrop-filter: blur(5px); /* Effetto blur per browser moderni */
+}
+
+/* Stili per l'immagine ingrandita */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s ease-out;
+}
+
+/* Animazione per l'effetto zoom */
+@keyframes zoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Bottone di chiusura (la 'X') */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Aggiungi questa regola per rendere le immagini nelle card cliccabili */
+.photo-card img {
+    cursor: zoom-in;
+}
+
+/* Opzionale: per bloccare lo scroll della pagina quando la modale è aperta */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
 .fade-in { 
   opacity: 0; 
   animation: fadeIn 1s forwards; 
