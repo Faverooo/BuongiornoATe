@@ -80,6 +80,11 @@ function createPhotoCard(photo){
     card.appendChild(date);
 
     // Bottone salva immagine
+    const caption = document.createElement('div');
+    caption.className = 'photo-caption';
+    caption.textContent = photo.caption;
+    
+    // Bottone di salvataggio
     const saveBtn = document.createElement('button');
     saveBtn.className = 'save-btn';
     saveBtn.innerHTML = '⬇'; // icona freccia giù
@@ -89,8 +94,10 @@ function createPhotoCard(photo){
         link.download = photo.title || 'foto';
         link.click();
     });
-    card.appendChild(saveBtn);
-
+    
+    // Aggiungi bottone a fianco della caption
+    caption.appendChild(saveBtn);
+    card.appendChild(caption);
     return card;
 }
 
