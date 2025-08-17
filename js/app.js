@@ -96,10 +96,19 @@ function createPhotoCard(photo){
     saveBtn.className = 'save-btn';
     
     saveBtn.addEventListener('click', () => {
-        const link = document.createElement('a');
-        link.href = photo.src;
-        link.download = photo.title.replace(/\s+/g, '_');
-        link.click();
+    // 1. Crea un elemento link <a> invisibile
+    const link = document.createElement('a');
+    link.href = photo.src;
+
+    // 2. Imposta il nome del file per il download (es. 2025-08-17.jpg)
+    const filename = photo.src.split('/').pop();
+    link.download = filename;
+    
+    // 3. Aggiungi il link alla pagina, cliccalo e rimuovilo subito dopo.
+    // Questo è il trucco per farlo funzionare su tutti i browser.
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     });
 
     card.appendChild(saveBtn);
