@@ -28,31 +28,33 @@ async function loadPhotos() {
 
         // Toggle archivio
         toggleBtn.addEventListener('click', () => {
-            if (containerArchive.style.display === 'none' || containerArchive.style.display === '') {
-                // Svuota l'archivio per non duplicare
-                containerArchive.innerHTML = '';
+        // Ora controlliamo la presenza di una classe, non di uno stile inline
+        if (!containerArchive.classList.contains('archive-visible')) {
+            // Svuota l'archivio per non duplicare
+            containerArchive.innerHTML = '';
+    
+            // Ordina le foto passate in ordine decrescente di data
+            photos
+                .filter(p => p.date < todayStr)
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .forEach(photo => {
+                    const card = createPhotoCard(photo);
+                    containerArchive.appendChild(card);
+                });
+    
+            // Aggiungiamo la classe per rendere l'archivio visibile
+            containerArchive.classList.add('archive-visible');
+            toggleBtn.textContent = 'Nascondi Archivio';
+        } else {
+            // Rimuoviamo la classe per nascondere l'archivio
+            containerArchive.classList.remove('archive-visible');
+            toggleBtn.textContent = 'Mostra Archivio';
+        }
+    });
 
-                // Ordina le foto passate in ordine decrescente di data
-                photos
-                    .filter(p => p.date < todayStr)
-                    .sort((a, b) => new Date(b.date) - new Date(a.date))
-                    .forEach(photo => {
-                        const card = createPhotoCard(photo);
-                        card.classList.add('fade-in');
-                        containerArchive.appendChild(card);
-                    });
-
-                containerArchive.style.display = 'block';
-                toggleBtn.textContent = 'Nascondi Archivio';
-            } else {
-                containerArchive.style.display = 'none';
-                toggleBtn.textContent = 'Mostra Archivio';
-            }
-        });
-
-        // ✅ Avvio: archivio nascosto e bottone coerente
-        containerArchive.style.display = 'none';
-        toggleBtn.textContent = 'Mostra Archivio';
+    // Rimuovi o commenta questa riga: containerArchive.style.display = 'none';
+    // Lo stato iniziale è ora gestito dal CSS.
+    toggleBtn.textContent = 'Mostra Archivio';
 
     } catch (err) {
         console.error('Errore nel caricamento delle foto:', err);
