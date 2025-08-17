@@ -79,16 +79,18 @@ function createPhotoCard(photo){
     date.textContent = photo.date;
     card.appendChild(date);
 
-   // Bottone salva immagine
+    // Bottone salva immagine
     const saveBtn = document.createElement('button');
+    saveBtn.textContent = '💾 Salva immagine';
     saveBtn.className = 'save-btn';
-    saveBtn.innerHTML = '⬇'; // icona freccia giù
+    
     saveBtn.addEventListener('click', () => {
         const link = document.createElement('a');
         link.href = photo.src;
-        link.download = photo.title || 'foto';
+        link.download = photo.title.replace(/\s+/g, '_');
         link.click();
     });
+
     card.appendChild(saveBtn);
     return card;
 }
