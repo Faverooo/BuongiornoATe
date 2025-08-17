@@ -28,15 +28,30 @@ async function loadPhotos() {
             containerArchive.appendChild(card);
         });
 
-        document.getElementById('archive-toggle').addEventListener('click', ()=>{
-            if(containerArchive.style.display === 'none'){
-                containerArchive.style.display = 'grid';
-                document.getElementById('archive-toggle').textContent = 'Nascondi Archivio';
-            } else {
-                containerArchive.style.display = 'none';
-                document.getElementById('archive-toggle').textContent = 'Mostra Archivio';
-            }
-        });
+        // Bottone mostra/nascondi archivio
+document.getElementById('archive-toggle').addEventListener('click', () => {
+    if (containerArchive.style.display === 'none' || containerArchive.style.display === '') {
+        // Prima svuota l'archivio per non duplicare
+        containerArchive.innerHTML = '';
+
+        // Ordina le foto passate in ordine decrescente di data
+        photos
+          .filter(p => p.date < todayStr)
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .forEach(photo => {
+              const card = createPhotoCard(photo);
+              card.classList.add('fade-in');
+              containerArchive.appendChild(card);
+          });
+
+        containerArchive.style.display = 'block';
+        document.getElementById('archive-toggle').textContent = 'Nascondi Archivio';
+    } else {
+        containerArchive.style.display = 'none';
+        document.getElementById('archive-toggle').textContent = 'Mostra Archivio';
+    }
+});
+
 
     } catch(err) {
         console.error('Errore nel caricamento delle foto:', err);
