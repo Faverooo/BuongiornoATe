@@ -1,7 +1,7 @@
 [
   {
     "date": "2025-08-14",
-    "src": "img/foto1.jpeg",
+    "src": "img/foto1.JPEG",
     "caption": "barista molto bella!"
   },
   {
@@ -16,12 +16,12 @@
   },
   {
     "date": "2025-08-17",
-    "src": "img/foto4.jpeg",
+    "src": "img/foto4.JPEG",
     "caption": "Io che provo a tenerti quando stai per andare a casa!!!!"
   },
   {
     "date": "2025-08-18",
-    "src": "img/foto5.jpg",
+    "src": "img/foto5.JPEG",
     "caption": "Paradiso"
   }
 ]
