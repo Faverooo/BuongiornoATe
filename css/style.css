@@ -14,7 +14,6 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100%;
-/*   background: linear-gradient(to bottom right, #ffeaea, #fff); */
   margin: 0;
   padding: 0; /* Rimuoviamo completamente il padding da qui */
   color: #444;
