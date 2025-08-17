@@ -60,10 +60,10 @@ async function loadPhotos() {
     }
 }
 
-function createPhotoCard(photo) {
+function createPhotoCard(photo){
     const card = document.createElement('div');
     card.className = 'photo-card';
-    if (photo.special) card.classList.add('special');
+    if(photo.special) card.classList.add('special');
 
     const img = document.createElement('img');
     img.src = photo.src;
@@ -84,8 +84,40 @@ function createPhotoCard(photo) {
     date.textContent = photo.date;
     card.appendChild(date);
 
+    // Bottone per salvare l'immagine - stile carino
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = '💾 Salva immagine';
+    saveBtn.style.marginTop = '10px';
+    saveBtn.style.padding = '8px 15px';
+    saveBtn.style.border = 'none';
+    saveBtn.style.borderRadius = '12px';
+    saveBtn.style.background = 'linear-gradient(to right, #ff9999, #ff6666)';
+    saveBtn.style.color = '#fff';
+    saveBtn.style.fontWeight = 'bold';
+    saveBtn.style.cursor = 'pointer';
+    saveBtn.style.transition = 'transform 0.2s, box-shadow 0.2s';
+    
+    saveBtn.addEventListener('mouseover', () => {
+        saveBtn.style.transform = 'scale(1.05)';
+        saveBtn.style.boxShadow = '0 5px 15px rgba(255,102,102,0.4)';
+    });
+    saveBtn.addEventListener('mouseout', () => {
+        saveBtn.style.transform = 'scale(1)';
+        saveBtn.style.boxShadow = 'none';
+    });
+
+    saveBtn.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = photo.src;
+        link.download = photo.title.replace(/\s+/g, '_');
+        link.click();
+    });
+
+    card.appendChild(saveBtn);
+
     return card;
 }
+
 
 // Avvio
 loadPhotos();
