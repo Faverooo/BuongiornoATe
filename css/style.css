@@ -198,7 +198,7 @@ body.modal-open {
 
     /* 1. Centra il contenuto principale e dagli una larghezza massima */
     main {
-        max-width: 50vw; /* Il contenuto non si allargherà all'infinito */
+        max-width: 1200px; /* Il contenuto non si allargherà all'infinito */
         margin: 0 auto;   /* Centra il blocco 'main' nella pagina */
         padding: 2rem;
     }
@@ -207,6 +207,10 @@ body.modal-open {
     #archive.archive-visible {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 1.5rem;
+    }
+
+    #today-photo {
+        max-width: 50vw;
     }
 
     /* 3. Adatta le singole card alla nuova griglia */
