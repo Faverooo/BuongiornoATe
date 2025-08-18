@@ -115,8 +115,6 @@ h1 {
   background: #d62828;
 }
 
-/* Aggiungi questo codice al tuo file style.css */
-
 /* Stili per la finestra modale (l'overlay) */
 .modal {
     display: none; /* Nascosto di default */
@@ -200,7 +198,7 @@ body.modal-open {
 
     /* 1. Centra il contenuto principale e dagli una larghezza massima */
     main {
-        max-width: 1200px; /* Il contenuto non si allargherà all'infinito */
+        max-width: 50vw; /* Il contenuto non si allargherà all'infinito */
         margin: 0 auto;   /* Centra il blocco 'main' nella pagina */
         padding: 2rem;
     }
