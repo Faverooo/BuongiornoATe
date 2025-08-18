@@ -206,12 +206,9 @@ body.modal-open {
     }
 
     /* 2. Trasforma l'archivio in una griglia di foto */
-    #archive {
-        display: grid;
-        /* Crea colonne flessibili: ognuna larga almeno 350px.
-           Il browser ne aggiungerà quante ne entrano. */
+    #archive.archive-visible {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 1.5rem; /* Aggiunge spazio tra le foto nella griglia */
+        gap: 1.5rem;
     }
 
     /* 3. Adatta le singole card alla nuova griglia */
