@@ -241,28 +241,18 @@ body.modal-open {
   
   /* --- FOTO DEL GIORNO --- */
 
-  #today-photo {
-    /* 1. Limita le dimensioni e centra il contenitore */
-    max-height: 70vh;
-    max-width: 60%;
-    margin: 0 auto 2rem auto; /* top | auto | bottom | auto */
-    
-    /* 2. Usa flexbox per controllare il contenuto interno */
-    display: flex;
-    flex-direction: column;
+   #today-photo {
+    /* Centra la card e le impedisce di diventare troppo larga */
+    width: fit-content; /* Si adatta alla larghezza del contenuto */
+    max-width: 90%; /* Limite di sicurezza per la larghezza */
+    margin: 0 auto 2rem auto; /* Centra orizzontalmente */
   }
 
-  /* La card deve riempire il contenitore #today-photo */
-  #today-photo .photo-card {
-    flex-grow: 1; /* Occupa tutto lo spazio disponibile */
-    min-height: 0;
-  }
-
-  /* L'immagine mantiene le proporzioni e occupa lo spazio rimanente */
+  /* L'immagine ora controlla la dimensione della card */
   #today-photo .photo-card img {
-    flex-grow: 1; /* Occupa lo spazio lasciato dal testo */
-    object-fit: contain; /* MANTIENE LE PROPORZIONI */
-    min-height: 0; /* Fix per il ridimensionamento */
+    /* Limita l'altezza della foto al 70% dello schermo */
+    max-height: 70vh;
+    width: auto; /* La larghezza si adatterà per mantenere le proporzioni */
   }
 
 
