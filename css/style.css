@@ -239,39 +239,35 @@ body.modal-open {
     font-size: 2.5rem;
   }
   
-  /* --- LAYOUT FOTO DEL GIORNO --- */
-
-  #today-container {
-    display: grid;
-    /* Colonna centrale: larga al massimo 60% del contenitore, ma non più di 650px */
-    grid-template-columns: 1fr minmax(0, clamp(50%, 650px, 100%)) 1fr;
-    margin-bottom: 2rem;
-  }
+  /* --- FOTO DEL GIORNO --- */
 
   #today-photo {
-    grid-column: 2; /* Posiziona la card nella colonna centrale */
+    /* 1. Limita le dimensioni e centra il contenitore */
     max-height: 70vh;
+    max-width: 60%;
+    margin: 0 auto 2rem auto; /* top | auto | bottom | auto */
+    
+    /* 2. Usa flexbox per controllare il contenuto interno */
     display: flex;
+    flex-direction: column;
   }
-  
-  /* Stile specifico per la card della foto del giorno */
+
+  /* La card deve riempire il contenitore #today-photo */
   #today-photo .photo-card {
-    padding: 0 0 15px 0; /* Rimuove padding laterale e superiore */
+    flex-grow: 1; /* Occupa tutto lo spazio disponibile */
+    min-height: 0;
   }
 
-  /* L'immagine deve avere solo i bordi superiori arrotondati */
+  /* L'immagine mantiene le proporzioni e occupa lo spazio rimanente */
   #today-photo .photo-card img {
-    border-radius: var(--raggio-bordi-immagine);
-    object-fit: cover;
-  }
-  
-  /* Il padding va solo al blocco testo */
-  .photo-details {
-    padding: 0 15px;
+    flex-grow: 1; /* Occupa lo spazio lasciato dal testo */
+    object-fit: contain; /* MANTIENE LE PROPORZIONI */
+    min-height: 0; /* Fix per il ridimensionamento */
   }
 
-  /* --- LAYOUT ARCHIVIO --- */
-  
+
+  /* --- ARCHIVIO --- */
+
   #archive.archive-visible {
     width: 100%;
     display: grid;
@@ -279,10 +275,7 @@ body.modal-open {
     gap: 1.5rem;
   }
 
-  /* Le card dell'archivio DEVONO avere il padding e l'altezza al 100% */
   #archive .photo-card {
     height: 100%;
-    padding: 15px;
   }
-  
 }
