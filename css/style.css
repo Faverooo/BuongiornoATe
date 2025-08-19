@@ -240,28 +240,63 @@ body.modal-open {
     font-size: 2.5rem;
   }
   
+  /* 1. Grid container to perfectly center the photo of the day */
+  #today-container {
+    display: grid;
+    /* Creates 3 columns: empty space | content | empty space */
+    grid-template-columns: 1fr minmax(0, 650px) 1fr;
+    margin-bottom: 2rem;
+  }
+
+  /* 2. The photo of the day itself */
+  #today-photo {
+    grid-column: 2; /* Sits in the center column */
+    max-height: 70vh;
+    display: flex;
+  }
   
-   #today-container {
-     display: grid;
-     grid-template-columns: 1fr minmax(0, 45vw) 1fr; /* Colonna centrale max 45% */
-     margin-bottom: 2rem;
-   }
-   
-   #today-photo {
-     grid-column: 2; /* Posiziona la card nella colonna centrale */
-     max-height: 70vh;
-     display: flex;
-     flex-direction: column;
-   }
+  /* 3. General card styling */
+  .photo-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .photo-image-wrapper {
+    flex-grow: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--raggio-bordi-immagine);
+  }
   
+  .photo-details {
+    padding: 0 15px;
+  }
+  
+  /* 4. Archive layout */
   #archive.archive-visible {
+    width: 100%;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
   }
-  
-  /* Rende le card nella griglia della stessa altezza */
+
   #archive .photo-card {
     height: 100%;
+    padding: 15px;
   }
-
+  
+  #archive .photo-card img {
+    border-radius: var(--raggio-bordi-immagine);
+  }
 }
