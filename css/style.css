@@ -222,9 +222,24 @@ body.modal-open {
         margin: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Allinea tutto al centro verticalmente */
         height: 100%;
     }
+    .photo-card img {
+        width: 100%;
+        border-radius: 15px;
+        display: block;
+        margin: 0 auto;
+        cursor: zoom-in;
+      
+        /* 1. Dice all'immagine di occupare tutto lo spazio verticale disponibile */
+        flex-grow: 1; 
+      
+        /* 2. Adatta l'immagine a quello spazio senza distorcerla (e la centra) */
+        object-fit: contain; 
+        
+        /* 3. Fix tecnico per permettere all'immagine di ridimensionarsi correttamente */
+        min-height: 0;
+  }
 
     /* 4. Opzionale: Riduci un po' la dimensione del titolo */
     h1 {
