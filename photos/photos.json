@@ -2,7 +2,8 @@
   {
     "date": "2025-08-14",
     "src": "img/foto1.JPEG",
-    "caption": "barista molto bella!"
+    "caption": "barista molto bella!",
+    "special": True
   },
   {
     "date": "2025-08-15",
