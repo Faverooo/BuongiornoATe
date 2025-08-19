@@ -67,6 +67,9 @@ function createPhotoCard(photo){
     card.className = 'photo-card';
     if(photo.special) card.classList.add('special');
 
+    // Per centrare serve creare il wrapper
+    const imageWrapper = document.createElement('div'); 
+    imageWrapper.className = 'photo-image-wrapper';
     const img = document.createElement('img');
     img.src = photo.src;
     // Aggiungi l'evento click all'immagine per aprire la modale
@@ -78,7 +81,8 @@ function createPhotoCard(photo){
         modalImg.src = photo.src;
         document.body.classList.add('modal-open'); // Blocca lo scroll del body
     });
-    card.appendChild(img);
+    imageWrapper.appendChild(img); // Mettiamo l'immagine dentro il wrapper
+    card.appendChild(imageWrapper); // E il wrapper dentro la card
 
     const caption = document.createElement('div');
     caption.className = 'photo-caption';
