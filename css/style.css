@@ -213,6 +213,15 @@ body.modal-open {
         margin: 0 auto;   
     }
 
+    .photo-image-wrapper {
+        flex-grow: 1; /* Sarà questo div ad occupare lo spazio */
+        min-height: 0; /* Fix tecnico per il flexbox */
+        /* Lo usiamo anche per centrare l'immagine al suo interno */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
     /* 3. Adatta le singole card alla nuova griglia */
     .photo-card {
         width: 100%;
@@ -228,12 +237,12 @@ body.modal-open {
         display: block;
         margin: 0 auto;
         cursor: zoom-in;
-        /* 1. Dice all'immagine di occupare tutto lo spazio verticale disponibile */
-        flex-grow: 1; 
-        /* 2. Adatta l'immagine a quello spazio senza distorcerla (e la centra) */
-        object-fit: contain; 
-        /* 3. Fix tecnico per permettere all'immagine di ridimensionarsi correttamente */
-        min-height: 0;
+        width: auto; /* Lasciamo che si adatti in base all'altezza */
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 15px; /* Ora questo funzionerà! */
+        display: block;
+        cursor: zoom-in;
   }
 
     /*Riduci un po' la dimensione del titolo */
