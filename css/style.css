@@ -210,7 +210,7 @@ body.modal-open {
     }
 
     #today-photo {
-        max-height: 80vh;
+        max-height: 20;
         margin: 0 auto;
     }
 
