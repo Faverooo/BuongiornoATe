@@ -236,9 +236,6 @@ body.modal-open {
         overflow: hidden;
     }
     .photo-card img {
-        width: 100%;
-        border-radius: 15px;
-        display: block;
         margin: 0 auto;
         cursor: zoom-in;
         width: auto; /* Lasciamo che si adatti in base all'altezza */
@@ -246,7 +243,7 @@ body.modal-open {
         max-height: 100%;
         border-radius: 15px; /* Ora questo funzionerà! */
         display: block;
-        cursor: zoom-in;
+        object-fit: contain;
   }
 
     /*Riduci un po' la dimensione del titolo */
