@@ -209,8 +209,10 @@ body.modal-open {
     }
 
     #today-photo {
-        max-width: 45vw;
-        margin: 0 auto;   
+/*         max-width: 45vw; */
+        margin: 0 auto;  
+        /* --- AGGIUNGI QUESTA RIGA --- */
+        max-height: 70vh; /* Imposta l'altezza massima al 70% dello schermo */
     }
 
     .photo-image-wrapper {
