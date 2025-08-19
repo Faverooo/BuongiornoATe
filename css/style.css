@@ -261,7 +261,8 @@ body.modal-open {
 
   /* L'immagine deve avere solo i bordi superiori arrotondati */
   #today-photo .photo-card img {
-    border-radius: var(--raggio-bordi-immagine) var(--raggio-bordi-immagine) 0 0;
+    border-radius: var(--raggio-bordi-immagine);
+    object-fit: cover;
   }
   
   /* Il padding va solo al blocco testo */
