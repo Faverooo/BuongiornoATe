@@ -1,33 +1,77 @@
 [
   {
-    "date": "2025-08-14",
-    "src": "img/foto1.JPEG",
-    "caption": "Barista molto bella!",
-    "special": true
-  },
-  {
-    "date": "2025-08-15",
-    "src": "img/foto2.jpg",
-    "caption": "scusascusascusa"
-  },
-  {
     "date": "2025-08-16",
-    "src": "img/foto3.jpg",
-    "caption": "sei così bona che mi viene da mangiarti"
-  },
-  {
-    "date": "2025-08-17",
-    "src": "img/foto4.JPEG",
-    "caption": "Io che provo a tenerti quando stai per andare a casa!!!!"
-  },
-  {
-    "date": "2025-08-18",
     "src": "img/foto6.JPEG",
     "caption": "prima bacio la mia ragassa poi bacio il pavimento!"
   },
   {
+    "date": "2025-08-17",
+    "src": "img/foto1.JPEG",
+    "caption": "Barista molto bella!"
+  },
+  {
+    "date": "2025-08-18",
+    "src": "img/foto3.jpg",
+    "caption": "sei così bona che mi viene da mangiarti"
+  },
+  {
     "date": "2025-08-19",
+    "src": "img/foto2.jpg",
+    "caption": "scusascusascusa"
+  },
+  {
+    "date": "2025-08-20",
+    "src": "img/foto4.JPEG",
+    "caption": "Io che provo a tenerti quando stai per andare a casa!!!!"
+  },
+  {
+    "date": "2025-08-21",
     "src": "img/foto5.JPEG",
-    "caption": "Paradiso"
+    "caption": "il paradiso lo sogno così"
+  },
+  {
+    "date": "2025-08-22",
+    "src": "img/BF1.jpg",
+    "caption": "Buona fortuna amo ❤️"
+  },
+  {
+    "date": "2025-08-23",
+    "src": "img/foto7.JPEG",
+    "caption": "Non so se sia più bello il paesaggio o tu! (Tu ovviamente)"
+  },
+  {
+    "date": "2025-08-24",
+    "src": "img/foto8.JPEG",
+    "caption": "La abbiamo scelta comoda per un motivo"
+  },
+  {
+    "date": "2025-08-25",
+    "src": "img/BF2.jpg",
+    "caption": "DAI AMOOO!!!!!"
+  },
+  {
+    "date": "2025-08-26",
+    "src": "img/foto9.JPEG",
+    "caption": "coccolecoccole"
+  },
+  {
+    "date": "2025-08-27",
+    "src": "img/foto12.JPEG",
+    "caption": "Gnam (che bel sorrisone)"
+  },
+  {
+    "date": "2025-08-28",
+    "src": "img/foto13.JPEG",
+    "caption": "quanta contentesssa"
+  },
+  {
+    "date": "2025-08-29",
+    "src": "img/foto14.JPEG",
+    "caption": "siamo bellliiiiissimi!!!"
+  },
+  {
+    "date": "2025-08-30",
+    "src": "img/foto15.JPEG",
+    "caption": "qualcuno doveva dirlo"
   }
 ]
