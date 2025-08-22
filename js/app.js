@@ -9,8 +9,7 @@ async function loadPhotos() {
         const containerToday = document.getElementById('today-photo');
         const containerArchive = document.getElementById('archive');
         const toggleBtn = document.getElementById('archive-toggle');
-
-        const todayStr = new Date().toISOString().slice(0, 10);
+        const todayStr = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
 
         // Foto del giorno
         let todayPhoto = photos.find(p => p.date === todayStr);
